@@ -1,0 +1,82 @@
+/* CSS Reset - Normalize default browser styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15; /* Improve readability */
+  text-size-adjust: 100%; /* Prevent font size adjustments in mobile devices */
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif; /* Set a default font */
+}
+
+main {
+  display: block; /* Default for HTML5 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+p,
+blockquote,
+figure,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Ensure inputs match the font of the app */
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  /* Optional: Add global variables */
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+}
