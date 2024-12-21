@@ -1,58 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
+import { IoIosSearch } from "react-icons/io";
+import "./header.css";
+import { BiSolidUser } from "react-icons/bi";
+import { FaBox } from "react-icons/fa";
+import { FcLike } from "react-icons/fc";
+import { BiSolidHelpCircle } from "react-icons/bi";
+import { IoCart } from "react-icons/io5";
+import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 
 function Header() {
+  const [accountOpen, setAccountOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setAccountOpen(!accountOpen);
+  };
+
   return (
-    <div className="header__section">
-      <div className="header__wrapper">
-        {/* Logo */}
-        <div className="header__logo">
-          <h2 className="text-2xl font-bold text-customDark-900">
-            Realty<span className="!text-customRed-600">Mart</span>
-          </h2>
-        </div>
-        {/* Search Bar */}
-        <div className="header__search">
-          <form class="max-w-md">
-            <label
-              for="default-search"
-              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-            >
-              Search
-            </label>
-            <div class="relative">
-              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg
-                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+    <div className="header__section w-full">
+      <div className="header__wrapper w-4/5 flex justify-between  mx-auto mt-5">
+        <div className="header__content flex justify-between w-full">
+          {/* Logo */}
+          <div className="header__logo w-2/4">
+            <h2 className="text-3xl font-bold text-customDark-900">
+              Realty<span className="!text-customRed-600">Mart</span>
+            </h2>
+          </div>
+          {/* Search Bar */}
+          <div className="header__search w-full">
+            <form action="">
+              <div className="search__wrapper w-4/5 flex gap-3 items-center">
+                <div className="search flex items-center w-full  bg-white  rounded-lg border border-gray-500 text-2xl px-5 text-customDark-500 ">
+                  <IoIosSearch className="text-customDark-500" />
+                  <input
+                    type="search"
+                    placeholder="Search Products, Brands and Categories"
+                    className="focus:outline-none focus:ring-0 focus:border-none border-none w-full focus:border-transparent py-3 "
                   />
-                </svg>
+                </div>
+                <button
+                  type="submit"
+                  className="bg-customRed-600 px-5 py-3 text-white rounded-md text-lg hover:bg-customRed-700"
+                >
+                  Search
+                </button>
               </div>
-              <input
-                type="search"
-                id="default-search"
-                class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search Mockups, Logos..."
-                required
-              />
-              <button
-                type="submit"
-                class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            </form>
+          </div>
+          <div className="account__system w-2/5 flex items-center justify-between gap-5">
+            <div className="account  flex flex-col">
+              <div
+                className="account__button flex bg-customDark-200 px-5 py-3 items-center gap-2 rounded-md text-xl text-customDark-900 hover:bg-customRed-600 hover:text-white"
+                onClick={toggleDropdown}
               >
-                Search
-              </button>
+                <BiSolidUser />
+                <button className="">Account</button>
+                {accountOpen ? <FaCaretUp /> : <FaCaretDown />}
+              </div>
+              {accountOpen && (
+                <ul className="flex flex-col  bg-white py-5 rounded-sm absolute top-24 text-xl text-center shadow-lg">
+                  <li className="list-none flex gap-2 px-5 text-center justify-center py-2 bg-customYellow-500 hover:bg-customYellow-600">
+                    Sign In
+                  </li>
+                  <li className="flex list-none items-center px-5 py-2 gap-2 hover:bg-customDark-100">
+                    <BiSolidUser />
+                    My Account
+                  </li>
+                  <li className="flex list-none items-center px-5 py-2 gap-2 hover:bg-customDark-100">
+                    <FaBox />
+                    Orders
+                  </li>
+                  <li className="flex list-none items-center px-5 py-2 gap-2 hover:bg-customDark-100">
+                    <FcLike />
+                    Saved Items
+                  </li>
+                </ul>
+              )}
             </div>
-          </form>
-          <div className="account__system"></div>
+            <div className="help flex items-center text-xl gap-2 text-customDark-500 hover:text-customRed-500">
+              <BiSolidHelpCircle />
+              Help
+            </div>
+            <div className="cart flex items-center text-xl gap-2 text-customDark-500 hover:text-customRed-500">
+              <IoCart />
+              Cart
+            </div>
+          </div>
         </div>
       </div>
     </div>
