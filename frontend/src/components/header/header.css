@@ -1,0 +1,13 @@
+.search {
+  outline: none;
+}
+
+.search:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
