@@ -1,0 +1,9 @@
+/* Custom styles for Swiper pagination */
+.swiper-pagination-bullet {
+  background-color: #f5adb9 !important; /* Default color for pagination dots */
+  transition: background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #602033 !important; /* Active pagination dot color */
+}

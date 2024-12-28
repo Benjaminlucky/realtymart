@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Desktopnav() {
   return (
-    <div className="desktopnav__section w-2/12 hidden lg:block">
+    <div className="desktopnav__section hidden lg:block">
       <div className="desktopnav__wrapper flex w-full ">
         <div className="nav flex flex-col w-full">
           {navLinks.map((nav, index) => (

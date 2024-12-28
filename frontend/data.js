@@ -8,6 +8,7 @@ import { MdBathroom } from "react-icons/md";
 import { GiMetalScales } from "react-icons/gi";
 import { FaPaintRoller } from "react-icons/fa6";
 import { GiConcreteBag } from "react-icons/gi";
+import sofa from "./src/assets/furniture/furniture1.avif";
 
 export const navLinks = [
   {
@@ -69,5 +70,36 @@ export const navLinks = [
     name: "Cement & Concrete",
     link: "/cement-concrete",
     icon: GiConcreteBag,
+  },
+];
+
+export const slideProducts = [
+  {
+    id: 1,
+    name: "King Size Sofa",
+    price: 5000000,
+    link: "#",
+    image: "./src/assets/furniture/furniture1.avif",
+  },
+  {
+    id: 2,
+    name: "Queen Size Sofa",
+    price: 4000000,
+    link: "#",
+    image: "./src/assets/furniture/furniture2.avif",
+  },
+  {
+    id: 3,
+    name: "Royal Sofa",
+    price: 7000000,
+    link: "#",
+    image: "./src/assets/furniture/furniture3.avif",
+  },
+  {
+    id: 4,
+    name: "Classic Sofa",
+    price: 6000000,
+    link: "#",
+    image: "./src/assets/furniture/furniture4.avif",
   },
 ];

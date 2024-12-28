@@ -26,8 +26,8 @@ function Header() {
           <div className="header__content flex justify-between w-full">
             {/* Logo */}
             <Link to="/" className="w-2/4">
-              <div className="header__logo ">
-                <h2 className="text-3xl font-bold text-customDark-900">
+              <div className="header__logo">
+                <h2 className="text-2xl sm:text-3xl font-bold text-customDark-900">
                   Realty<span className="!text-customRed-600">Mart</span>
                 </h2>
               </div>
@@ -36,17 +36,17 @@ function Header() {
             <div className="header__search w-full">
               <form>
                 <div className="search__wrapper w-4/5 flex gap-3 items-center">
-                  <div className="search flex items-center w-full bg-white rounded-lg border border-gray-500 text-2xl px-5 text-customDark-500">
+                  <div className="search flex items-center w-full bg-white rounded-lg border border-gray-500 text-xl sm:text-2xl px-5 text-customDark-500">
                     <IoIosSearch className="text-customDark-500" />
                     <input
                       type="search"
                       placeholder="Search Products, Brands and Categories"
-                      className="focus:outline-none w-full py-3"
+                      className="focus:outline-none w-full py-3 text-sm sm:text-base"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="bg-customRed-600 px-5 py-3 text-white rounded-md text-lg hover:bg-customRed-700"
+                    className="bg-customRed-600 px-4 sm:px-5 py-3 text-white rounded-md text-sm sm:text-lg hover:bg-customRed-700"
                   >
                     Search
                   </button>
@@ -54,22 +54,22 @@ function Header() {
               </form>
             </div>
             {/* Account and Cart */}
-            <div className="account__system w-2/5 flex items-center justify-between gap-5">
+            <div className="account__system w-2/5 flex items-center justify-between gap-3 sm:gap-5">
               <div className="account flex flex-col relative">
                 <div
-                  className="account__button flex bg-customDark-200 px-5 py-3 items-center gap-2 rounded-md text-xl text-customDark-900 hover:bg-customRed-600 hover:text-white cursor-pointer"
+                  className="account__button flex bg-customDark-200 px-4 sm:px-5 py-2 sm:py-3 items-center gap-2 rounded-md text-lg sm:text-xl text-customDark-900 hover:bg-customRed-600 hover:text-white cursor-pointer"
                   onClick={toggleDropdown}
                 >
                   <BiSolidUser />
-                  <span>Account</span>
+                  <span className="text-sm sm:text-base">Account</span>
                   {accountOpen ? <FaCaretUp /> : <FaCaretDown />}
                 </div>
                 {accountOpen && (
-                  <ul className="dropdown-menu flex flex-col bg-white py-5 rounded-md absolute top-14 text-xl shadow-lg">
+                  <ul className="dropdown-menu w-[190px] flex flex-col bg-white py-5 rounded-md absolute top-14 text-sm md:text-lg text-left shadow-lg">
                     <li className="list-none flex gap-2 px-5 py-2 bg-customYellow-500 hover:bg-customYellow-600">
                       Sign In
                     </li>
-                    <li className="flex list-none items-center px-5 py-2 gap-2 hover:bg-customDark-100">
+                    <li className="flex list-none justify-left items-center px-3 py-2 gap-2 hover:bg-customDark-100">
                       <BiSolidUser />
                       My Account
                     </li>
@@ -84,11 +84,11 @@ function Header() {
                   </ul>
                 )}
               </div>
-              <div className="help flex items-center text-xl gap-2 text-customDark-500 hover:text-customRed-500">
+              <div className="help flex items-center text-sm sm:text-xl gap-2 text-customDark-500 hover:text-customRed-500">
                 <BiSolidHelpCircle />
                 Help
               </div>
-              <div className="cart flex items-center text-xl gap-2 text-customDark-500 hover:text-customRed-500">
+              <div className="cart flex items-center text-sm sm:text-xl gap-2 text-customDark-500 hover:text-customRed-500">
                 <IoCart />
                 Cart
               </div>
@@ -101,9 +101,9 @@ function Header() {
       <div className="mobile__header md:hidden w-full">
         <div className="mobileheader__wrapper flex flex-col w-11/12 mx-auto p-2">
           <div className="mobileheader__top flex justify-between items-center">
-            <div className="logo__nav flex gap-3 text-2xl items-center font-bold">
+            <div className="logo__nav flex gap-3 text-xl sm:text-2xl items-center font-bold">
               <div
-                className="nav text-2xl hover:text-customRed-700 cursor-pointer"
+                className="nav text-2xl sm:text-3xl hover:text-customRed-700 cursor-pointer"
                 onClick={toggleMobileNav}
               >
                 <IoMenu />
@@ -114,11 +114,11 @@ function Header() {
                 </Link>
               </div>
             </div>
-            <div className="accounts__cart flex gap-2 text-2xl items-center hover:text-customRed-700">
-              <div className="mobile__accounts">
+            <div className="accounts__cart flex gap-2 sm:gap-4 text-2xl items-center hover:text-customRed-700">
+              <div className="mobile__accounts text-lg sm:text-xl">
                 <HiUserCircle />
               </div>
-              <div className="mobile__carts">
+              <div className="mobile__carts text-lg sm:text-xl">
                 <BsCart3 />
               </div>
             </div>
@@ -129,7 +129,7 @@ function Header() {
                 <Link
                   key={index}
                   to={link.link}
-                  className="navlink flex items-center gap-3 p-3 text-lg hover:bg-customRed-100"
+                  className="navlink flex items-center gap-3 p-3 text-sm sm:text-lg hover:bg-customRed-100"
                 >
                   {React.createElement(link.icon)}
                   {link.name}
